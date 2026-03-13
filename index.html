@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>耶斯梅诺 YESMENO - 健康接发 · 发缝消失术</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+        body {
+            background: #f8f8f8;
+            color: #333;
+            line-height: 1.8;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        header {
+            background: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo img {
+            height: 70px;
+            max-width: 100%;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        nav a {
+            font-size: 16px;
+            color: #555;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #d4af37;
+        }
+        .banner {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .banner-content {
+            position: relative;
+            z-index: 1;
+        }
+        .banner h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .banner p {
+            font-size: 20px;
+            max-width: 750px;
+            margin: 0 auto 25px;
+            opacity: 0.9;
+        }
+        .banner .tagline {
+            font-size: 18px;
+            color: #d4af37;
+        }
+        .section {
+            padding: 80px 0;
+            background: #fff;
+            margin-bottom: 2px;
+        }
+        .section:nth-child(even) {
+            background: #fafafa;
+        }
+        .section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: #222;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section h2::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: #d4af37;
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        .item {
+            text-align: center;
+            padding: 30px 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        .item p {
+            font-size: 16px;
+            color: #666;
+        }
+        .item img {
+            border-radius: 8px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .vision-mission {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 17px;
+            color: #555;
+        }
+        .vision-mission h3 {
+            color: #d4af37;
+            font-size: 20px;
+            margin: 20px 0 10px;
+        }
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .before-after img {
+            border-radius: 8px;
+            width: 100%;
+        }
+        .before-after h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+        }
+        .case-grid img {
+            border-radius: 8px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            width: 100%;
+        }
+        .philosophy {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 16px;
+            color: #666;
+        }
+        .philosophy h3 {
+            color: #222;
+            font-size: 18px;
+            margin: 30px 0 10px;
+            text-align: left;
+        }
+        .philosophy p {
+            text-align: left;
+            line-height: 1.9;
+        }
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+        .footer-logo img {
+            height: 60px;
+        }
+        .contact {
+            margin: 25px 0;
+            font-size: 17px;
+            line-height: 2;
+        }
+        .copyright {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+        @media (max-width: 768px) {
+            .header-inner {
+                justify-content: center;
+            }
+            nav ul {
+                margin-top: 15px;
+                width: 100%;
+                justify-content: center;
+                gap: 20px;
+                padding: 0;
+            }
+            .banner h1 {
+                font-size: 28px;
+            }
+            .banner p {
+                font-size: 17px;
+            }
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+            .section h2 {
+                font-size: 28px;
+            }
+            .grid {
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="yesmeno-logo.png" alt="耶斯梅诺 YESMENO">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#brand">品牌核心</a></li>
+                    <li><a href="#projects">核心项目</a></li>
+                    <li><a href="#cases">真实案例</a></li>
+                    <li><a href="#philosophy">商业哲学</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="banner" id="home">
+    <div class="container banner-content">
+        <h1>耶斯梅诺 YESMENO</h1>
+        <p>专注健康接发 · 还原原生美感 · 坚守商业本心</p>
+        <p class="tagline">不伤头皮 · 预防掉发 · 自然隐形 · 信守承诺</p>
+    </div>
+</div>
+
+<div class="section" id="brand">
+    <div class="container">
+        <h2>品牌核心</h2>
+        <div class="item">
+            <p style="font-size:17px; max-width:800px; margin:0 auto 30px; color:#555;">
+                耶斯梅诺 YESMENO，由创始人<strong>侯学敏</strong>创立，深耕健康接发技术与头皮生态养护领域，以<strong>健康、安全、自然、守信</strong>为核心准则，
+                打造真正“原生感”浓密秀发，同时以成熟的商业哲学为根基，坚守承诺、理性决策，为客户提供有价值、可信赖的美业服务。
+            </p>
+            <div class="vision-mission">
+                <h3>品牌愿景</h3>
+                <p>成为美业健康接发领域的标杆品牌，以技术立根、以诚信立身，让每一位客户拥有原生美感秀发，让品牌在商业浪潮中行稳致远。</p>
+                <h3>品牌使命</h3>
+                <p>以专业技术守护头皮健康，以刚性承诺筑牢信任基石，以价值对等实现客户与品牌的动态平衡，让健康接发成为美与信任的双重选择。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="projects">
+    <div class="container">
+        <h2>核心项目</h2>
+        <div class="grid">
+            <div class="item">
+                <img src="img1.jpg" alt="发缝消失术效果展示">
+                <h3>发缝消失术</h3>
+                <p>核心功能：预防掉发、保护毛囊<br>打造健康头皮生长环境，从根源改善发缝宽、头发稀疏问题，效果自然不假。</p>
+            </div>
+            <div class="item">
+                <img src="img2.jpg" alt="纳米微编健康接发工艺">
+                <h3>专业健康接发</h3>
+                <p>纳米微编核心工艺<br>头皮0拽痛、接口隐形防水，20分钟极速接发，真发含量98%，好看更要健康。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="cases">
+    <div class="container">
+        <h2>真实案例</h2>
+        <div class="before-after">
+            <div>
+                <h3>改善前</h3>
+                <img src="img3-left.jpg" alt="发缝宽改善前">
+            </div>
+            <div>
+                <h3>改善后</h3>
+                <img src="img3-right.jpg" alt="发缝宽改善后">
+            </div>
+        </div>
+        <div class="before-after">
+            <div>
+                <h3>改善前</h3>
+                <img src="img8-left.jpg" alt="头发稀疏改善前">
+            </div>
+            <div>
+                <h3>改善后</h3>
+                <img src="img8-right.jpg" alt="头发稀疏改善后">
+            </div>
+        </div>
+        <div class="case-grid">
+            <img src="img6-1.jpg" alt="接发案例1">
+            <img src="img6-2.jpg" alt="接发案例2">
+            <img src="img6-3.jpg" alt="接发案例3">
+            <img src="img6-4.jpg" alt="接发案例4">
+            <img src="img6-5.jpg" alt="接发案例5">
+            <img src="img6-6.jpg" alt="接发案例6">
+        </div>
+        <img src="img7.jpg" alt="耶斯梅诺多案例效果对比" style="border-radius: 8px; margin: 40px auto; max-width: 800px;">
+    </div>
+</div>
+
+<div class="section" id="philosophy">
+    <div class="container">
+        <h2>商业哲学</h2>
+        <div class="item">
+            <p style="font-size:17px; margin-bottom:20px; color:#555;">
+                耶斯梅诺的商业底层逻辑，源于创始人侯学敏的实战思考与自省沉淀，是从“道”到“术”的可落地体系，也是品牌行稳致远的核心支撑。
+            </p>
+            <div class="philosophy">
+                <h3>❶ 信誉基石：承诺与原则的刚性</h3>
+                <p>承诺必须兑现，无论执行中遇到何种变量，这是商业信誉的底线，也是建立长期信任的唯一途径。坚守承诺，是捍卫品牌价值观，更是个人与品牌品牌的立身之本。</p>
+                <h3>❷ 风险智慧：与不确定性共舞</h3>
+                <p>风险无处不在，接受不确定性是成熟决策的第一步。永远保持谦逊，建立多层防御机制，准备Plan B对冲潜在危机；基于客观概率做判断，主动创造条件将可能性转化为现实。</p>
+                <h3>❸ 人性洞察：价值对等与动态平衡</h3>
+                <p>感恩与为人着想是建立关系的敲门砖，而自身价值是一切的前提。高级的善良是理性的，信任是核心原则，但执行方式需因地制宜、因人而异，时刻保持动态平衡。</p>
+                <h3>❹ 决策进化：从原则到算法</h3>
+                <p>将抽象的商业原则转化为可执行、可迭代的“算法”，让感性原则成为理性规则。融合数据理性、趋势想象力、长期主义毅力构建决策体系，拥抱AI技术，打造“人+AI”的集体思维模式。</p>
+                <h3>❺ 核心内核：动态的商业操作系统</h3>
+                <p>耶斯梅诺的商业哲学，是一套从内心原则到外部行动的完整体系，是可以被学习、应用、进化的“动态操作系统”，指引品牌坚守原则、理性决策，在商业浪潮中行稳致远。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer id="contact">
+    <div class="container">
+        <div class="footer-logo">
+            <img src="yesmeno-logo.png" alt="耶斯梅诺 YESMENO">
+        </div>
+        <h3>联系我们</h3>
+        <div class="contact">
+            创始人：侯学敏<br>
+            微信：137277560<br>
+            电话：15129176670
+        </div>
+        <div class="copyright">
+            © 2026 耶斯梅诺 YESMENO 保留所有权利 | 以技术立根 · 以诚信立身
+        </div>
+    </div>
+</footer>
+</body>
+</html>
